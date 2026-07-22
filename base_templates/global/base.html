@@ -1,21 +1,15 @@
-{% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'global/css/style.css' %}" />
-    <title>Agenda de Contatos</title>
-  </head>
-  <body>
-    <header class="header">
-      <h1 class="header-heading">
-        <a class="header-link" href="{% url 'contact:index' %}">Agenda de Contatos</a>
-      </h1>
-    </header>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  {% include 'global/partials/_head.html' %}
+</head>
+<body>
+  {% include 'global/partials/_header.html' %}
 
-    <main class="content">
-      {% block content %}{% endblock %}
-    </main>
-  </body>
+  <main class="content">
+    {% block content %}{% endblock content %}
+    {% include 'global/partials/_pagination.html' %}
+  </main>
+
+</body>
 </html>
